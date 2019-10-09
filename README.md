@@ -3,22 +3,55 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+## Ruby version
+``
+ruby 2.6.3p62 (2019-04-16 revision 67580)
+``
 
-* Configuration
+## System dependencies
+* Postgresql
 
-* Database creation
+## Configuration
+* Update database credential on config/database.yml
 
-* Database initialization
+## Database creation
+``
+rails db:create
+``
 
-* How to run the test suite
+## Database initialization
+``
+rails db:migrate
+``
 
-* Services (job queues, cache servers, search engines, etc.)
+## How to run the test suite
+``
+TBD
+``
 
-* Deployment instructions
+## Services (job queues, cache servers, search engines, etc.)
+``
+TBD
+``
 
-* ...
+## Deployment instructions
+``
+TBD
+``
+
+## API Documentation
+    http://localhost:3000/api-docs/
+
+Run this command to generate new API Documentation
+
+``
+rake rswag:specs:swaggerize
+``
+
+
+## Prettier Ruby Plugin
+``
+bundle exec rbprettier --write '**/*.rb'
+``
