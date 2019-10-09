@@ -1,0 +1,210 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Kiwari - Backend Test API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/products": {
+      "get": {
+        "summary": "Retrieves products",
+        "tags": [
+          "Products"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Product Found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "image": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "price",
+                "image"
+              ]
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a product",
+        "tags": [
+          "Products"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "product",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "image": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "price",
+                "image"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product Created"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "summary": "Retrieves a product",
+        "tags": [
+          "Products"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "product found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "image": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "price",
+                "image"
+              ]
+            }
+          },
+          "404": {
+            "description": "product not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a product",
+        "tags": [
+          "Products"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "product",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "image": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "price",
+                "image"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product Updated"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a product",
+        "tags": [
+          "Products"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product Deleted"
+          },
+          "404": {
+            "description": "product not found"
+          }
+        }
+      }
+    }
+  }
+}
