@@ -14,8 +14,12 @@ class ProductsController < ApplicationController
 
   # POST /products
   def create
-    @product = Product.create(product_params)
-    json_response(@product.as_json(except: %i[created_at updated_at]))
+    @product = Product.new(product_params)
+    if @product.save
+      json_response(@product.as_json(except: %i[created_at updated_at]))
+    else
+      raise ActiveRecord::RecordInvalid.new(@product)
+    end
   end
 
   # PATCH/PUT /products/1
