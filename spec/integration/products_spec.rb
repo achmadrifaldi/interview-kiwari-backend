@@ -7,7 +7,7 @@ describe 'Products API' do
 			tags 'Products'
 			produces 'application/json'
 
-			response '200', 'Product Found' do
+			response '200', 'Success' do
 				schema type: :object,
 					properties: {
 						id: { type: :integer, },
@@ -35,7 +35,7 @@ describe 'Products API' do
         required: [ 'name', 'price', 'image' ]
       }
 
-      response '200', 'Product Created' do
+      response '200', 'Success' do
         let(:product) { { name: 'Product Name', price: 1000000, image: 'https://via.placeholder.com/150' } }
         run_test!
       end
@@ -87,7 +87,7 @@ describe 'Products API' do
         required: [ 'name', 'price', 'image' ]
       }
 
-      response '200', 'Product Updated' do
+      response '200', 'Success' do
         let(:product) { { name: 'Product Name', price: 1000000, image: 'https://via.placeholder.com/150' } }
         run_test!
       end
@@ -108,7 +108,7 @@ describe 'Products API' do
         produces 'application/json'
         parameter name: :id, :in => :path, :type => :string
   
-        response '200', 'Product Deleted' do
+        response '200', 'Success' do
           run_test!
         end
   
