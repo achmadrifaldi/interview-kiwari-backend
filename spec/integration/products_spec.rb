@@ -3,7 +3,7 @@ require 'swagger_helper'
 
 describe 'Products API' do
   path '/products' do
-    get 'Retrieves products' do
+    get 'Get All Product' do
       tags 'Products'
       produces 'application/json'
 
@@ -29,7 +29,7 @@ describe 'Products API' do
       end
     end
 
-    post 'Creates a product' do
+    post 'Insert New Product' do
       tags 'Products'
       consumes 'application/json'
       parameter name: :product,
@@ -65,7 +65,7 @@ describe 'Products API' do
   path '/products/{id}' do
     parameter name: :id, in: :path, type: :string
 
-    get 'Retrieves a product' do
+    get 'Get Product by ID' do
       tags 'Products'
       produces 'application/json'
 
@@ -96,7 +96,7 @@ describe 'Products API' do
       end
     end
     
-    put 'Update a product' do
+    put 'Update Product by ID' do
       tags 'Products'
       consumes 'application/json'
       parameter name: :product,
@@ -133,7 +133,7 @@ describe 'Products API' do
       end
     end
 
-    delete 'Delete a product' do
+    delete 'Delete Product by ID' do
       tags 'Products'
       produces 'application/json'
       parameter name: :id, in: :path, type: :string
