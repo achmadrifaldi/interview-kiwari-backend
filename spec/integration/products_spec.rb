@@ -63,10 +63,11 @@ describe 'Products API' do
   end
 
   path '/products/{id}' do
+    parameter name: :id, in: :path, type: :string
+
     get 'Retrieves a product' do
       tags 'Products'
       produces 'application/json'
-      parameter name: :id, in: :path, type: :string
 
       response '200', 'product found' do
         schema type: :object,
@@ -94,7 +95,7 @@ describe 'Products API' do
         run_test!
       end
     end
-
+    
     put 'Update a product' do
       tags 'Products'
       consumes 'application/json'

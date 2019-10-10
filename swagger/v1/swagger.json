@@ -103,6 +103,14 @@
       }
     },
     "/products/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
       "get": {
         "summary": "Retrieves a product",
         "tags": [
@@ -110,14 +118,6 @@
         ],
         "produces": [
           "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "type": "string",
-            "required": true
-          }
         ],
         "responses": {
           "200": {
