@@ -5,6 +5,22 @@
     "version": "v1"
   },
   "paths": {
+    "/": {
+      "get": {
+        "summary": "Retrieves App Info",
+        "tags": [
+          "Root"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucess"
+          }
+        }
+      }
+    },
     "/products": {
       "get": {
         "summary": "Retrieves products",
@@ -16,7 +32,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Product Found",
+            "description": "Success",
             "schema": {
               "type": "object",
               "properties": {
@@ -78,7 +94,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Product Created"
+            "description": "Success"
           },
           "422": {
             "description": "Unprocessable Entity"
@@ -170,7 +186,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Product Updated"
+            "description": "Success"
           },
           "422": {
             "description": "Unprocessable Entity"
@@ -198,7 +214,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Product Deleted"
+            "description": "Success"
           },
           "404": {
             "description": "product not found"
