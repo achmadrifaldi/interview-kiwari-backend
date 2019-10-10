@@ -20,8 +20,11 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1
   def update
-    @product.update(product_params)
-    json_response(@product.as_json(except: %i[created_at updated_at]))
+    if @product.update(product_params)
+      json_response(@product.as_json(except: %i[created_at updated_at]))
+    else
+      raise ActiveRecord::RecordInvalid.new(@product)
+    end
   end
 
   # DELETE /products/1
