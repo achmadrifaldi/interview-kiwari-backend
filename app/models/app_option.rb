@@ -10,6 +10,8 @@
 #
 
 class AppOption < ApplicationRecord
+  validates :option_name, uniqueness: true
+
   def self.to_map
     options = {}
 
