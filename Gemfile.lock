@@ -179,6 +179,9 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    validate_url (1.0.8)
+      activemodel (>= 3.0.0)
+      public_suffix
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -201,6 +204,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
+  validate_url
 
 RUBY VERSION
    ruby 2.6.3p62

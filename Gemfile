@@ -25,6 +25,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+# https://github.com/perfectline/validates_url
+gem "validate_url"
 # https://github.com/rswag/rswag
 gem 'rswag'
 
