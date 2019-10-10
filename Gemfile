@@ -42,6 +42,8 @@ group :development do
 
   # https://github.com/prettier/plugin-ruby
   gem 'prettier'
+  # https://github.com/ctran/annotate_models
+  gem 'annotate'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
