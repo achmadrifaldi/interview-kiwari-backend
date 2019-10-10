@@ -1,9 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-
+# Kiwari - Backend Test
 
 ## Ruby version
 ``
@@ -39,6 +34,10 @@ Run this command to generate new API Documentation
 rake rswag:specs:swaggerize
 ``
 
+## How to run the test suite
+``
+bundle exec rspec
+``
 
 ## Prettier Ruby Plugin
 ``
