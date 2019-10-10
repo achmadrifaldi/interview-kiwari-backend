@@ -22,24 +22,13 @@ rails db:create
 ``
 
 ## Database initialization
-``
-rails db:migrate
-``
+    $ rails db:migrate db:seed
 
-## How to run the test suite
-``
-TBD
-``
 
-## Services (job queues, cache servers, search engines, etc.)
-``
-TBD
-``
-
-## Deployment instructions
-``
-TBD
-``
+## Docker Compose
+    $ docker-compose build
+    $ docker-compose run web rails db:create db:migrate db:seed
+    $ docker-compose up
 
 ## API Documentation
     http://localhost:3000/api-docs/
