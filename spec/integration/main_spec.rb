@@ -3,7 +3,7 @@ require 'swagger_helper'
 
 describe 'Main API' do
   path '/' do
-    get 'Retrieves App Info' do
+    get 'Retrieve App Info' do
       tags 'Root'
       produces 'application/json'
 
